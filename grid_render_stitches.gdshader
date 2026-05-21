@@ -2,7 +2,7 @@ shader_type spatial;
 render_mode unshaded;
 
 // texture containing all the stitches
-uniform sampler2D stitchType : filter_nearest;
+uniform sampler2D stitchType : filter_nearest, repeat_enable;
 // amount of different stitches in the texture
 uniform float stitchAmount = 8.0;
 // size (in pixels) of each stitch
@@ -19,8 +19,11 @@ void fragment() {
 	vec2 canvasUV = vec2(UV.x * canvasSize.x, UV.y * canvasSize.y);
 	vec4 imgInTexture = texture(imgIn, UV);
 
+	// offset stitch count to align with the tiling
+	float stitchOffset = float(int(canvasUV.x) % int(stitchAmount)) / 8.0;
+	
 	// get stitches as texture (y can be multiplied later if we have variations)
-	float stitchSelection = canvasUV.x * (1.0 / stitchAmount) + imgInTexture.r;
+	float stitchSelection = canvasUV.x * (1.0 / stitchAmount) + imgInTexture.r - stitchOffset;
 	vec2 stitchUV = vec2(stitchSelection, canvasUV.y);
 	vec4 stitchTexture = texture(stitchType, stitchUV);
 
