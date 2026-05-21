@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" path="res://grayscaleTEST.tres" id="1_5h7og"]
 
-[sub_resource type="Image" id="Image_5h7og"]
+[sub_resource type="Image" id="Image_xhw0s"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 32, 32, 99, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "format": "RGBA8",
@@ -12,7 +12,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_5h7og"]
-image = SubResource("Image_5h7og")
+image = SubResource("Image_xhw0s")
 
 [node name="SpriteSpawnSpot" type="Node2D" unique_id=117107722]
 
@@ -22,6 +22,8 @@ scale = Vector2(3, 3)
 texture = SubResource("ImageTexture_5h7og")
 
 [node name="SpriteStitch" type="Sprite2D" parent="." unique_id=26579651]
+light_mask = 0
+visibility_layer = 2
 z_index = 1
 texture_filter = 3
 scale = Vector2(3, 3)

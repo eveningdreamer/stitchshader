@@ -21,7 +21,10 @@ sky = SubResource("Sky_vlee5")
 ambient_light_color = Color(0, 1, 1, 1)
 tonemap_mode = 2
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_errnf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_56vvp"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mrt8p"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_to3cc"]
@@ -32,7 +35,8 @@ shader_parameter/stitchType = ExtResource("10_cgpbm")
 shader_parameter/stitchAmount = 8.0
 shader_parameter/stitchSize = 16.0
 shader_parameter/stitchVariationAmount = 1.0
-shader_parameter/imgIn = SubResource("ViewportTexture_errnf")
+shader_parameter/imgInStitch = SubResource("ViewportTexture_mrt8p")
+shader_parameter/imgInCol = SubResource("ViewportTexture_56vvp")
 shader_parameter/canvasSize = Vector2(240, 135)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jyaqr"]
@@ -63,7 +67,7 @@ disable_3d = true
 transparent_bg = true
 snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
-canvas_cull_mask = 4293918721
+canvas_cull_mask = 4293918723
 size = Vector2i(240, 135)
 size_2d_override = Vector2i(240, 135)
 
