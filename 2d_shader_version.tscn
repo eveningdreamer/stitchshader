@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cmbhf50ju14b2"]
+
+[ext_resource type="PackedScene" uid="uid://bxxqmdlb7r5cm" path="res://Chara-test2.tscn" id="1_bgh7e"]
+[ext_resource type="PackedScene" uid="uid://chswvi5j1ydti" path="res://SmallGrayScaleTest2.tscn" id="2_0bsww"]
+
+[node name="Node2D" type="Node2D" unique_id=808328833]
+
+[node name="Chara-test2" parent="." unique_id=117107722 instance=ExtResource("1_bgh7e")]
+position = Vector2(140, 90)
+
+[node name="Test1" parent="." unique_id=1737435653 instance=ExtResource("2_0bsww")]
+position = Vector2(30, 20)
+
+[node name="Test2" parent="." unique_id=101218537 instance=ExtResource("2_0bsww")]
+position = Vector2(80, 20)
+
+[node name="Test3" parent="." unique_id=1620213007 instance=ExtResource("2_0bsww")]
+position = Vector2(130, 20)
+
+[node name="Test4" parent="." unique_id=1060072056 instance=ExtResource("2_0bsww")]
+position = Vector2(180, 20)
+
+[node name="Test5" parent="." unique_id=2020627293 instance=ExtResource("2_0bsww")]
+position = Vector2(30, 50)
+
+[node name="Test6" parent="." unique_id=799704520 instance=ExtResource("2_0bsww")]
+position = Vector2(20, 100)
+
+[node name="Test7" parent="." unique_id=1805671071 instance=ExtResource("2_0bsww")]
+position = Vector2(100, 55)
+rotation = 1.5707964

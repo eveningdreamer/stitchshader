@@ -1,12 +1,8 @@
 extends MeshInstance3D
 
-@onready var sub_viewport: SubViewport = $"../SubViewport"
+@onready var colors_view_port: SubViewport = $"../ColorsViewPort"
+@onready var stitches_viewport: SubViewport = $"../StitchesViewport"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	stitches_viewport.world_2d = colors_view_port.world_2d

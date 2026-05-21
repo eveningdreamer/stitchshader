@@ -29,7 +29,7 @@ void fragment() {
 	vec2 stitchUV = vec2(stitchSelection, canvasUV.y);
 	vec4 stitchTexture = texture(stitchType, stitchUV);
 
-	vec4 stitchesOut = imgInTexture * stitchTexture;
+	vec4 stitchesOut = imgInColor * stitchTexture;
  
 	ALBEDO = stitchesOut.rgb;
 	ALPHA = stitchesOut.a;
