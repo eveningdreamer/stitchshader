@@ -1,15 +1,6 @@
 shader_type spatial;
 render_mode unshaded;
 
-// greyscale values of the input texture
-//const float crossIndex = 0.125;
-//const float antiSlashIndex = 0.250;
-//const float slashIndex = 0.375;
-//const float topLeftIndex = 0.5;
-//const float topRightIndex = 0.625;
-//const float bottomLeftIndex = 0.750;
-//const float bottomRightIndex = 0.825;
-
 // texture containing all the stitches
 uniform sampler2D stitchType : filter_nearest;
 // amount of different stitches in the texture
