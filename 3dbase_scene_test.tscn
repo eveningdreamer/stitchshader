@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cb8kefneus7ek" path="res://grid32x32.png" id="2_vlee5"]
 [ext_resource type="Script" path="res://img_test.gd" id="3_ywwr0"]
 [ext_resource type="Shader" path="res://grid_render_base_grid.gdshader" id="5_gg0ld"]
-[ext_resource type="PackedScene" path="res://fps_counter.tscn" id="6_elx6k"]
 [ext_resource type="Texture2D" uid="uid://n7tsgd353v23" path="res://allstitches16x16.png" id="10_cgpbm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyaqr"]
@@ -100,5 +99,3 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_bjwnx")
 script = ExtResource("3_ywwr0")
-
-[node name="FPSCounter" parent="." unique_id=551642923 instance=ExtResource("6_elx6k")]
