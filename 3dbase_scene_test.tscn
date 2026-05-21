@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://5rklm3pdpfrf"]
+
+[ext_resource type="PackedScene" uid="uid://bxxqmdlb7r5cm" path="res://Chara-test2.tscn" id="1_elx6k"]
+[ext_resource type="Shader" path="res://grid_render_stitches.gdshader" id="2_errnf"]
+[ext_resource type="PackedScene" uid="uid://chswvi5j1ydti" path="res://SmallGrayScaleTest2.tscn" id="2_gg0ld"]
+[ext_resource type="Texture2D" uid="uid://cb8kefneus7ek" path="res://grid32x32.png" id="2_vlee5"]
+[ext_resource type="Script" path="res://img_test.gd" id="3_ywwr0"]
+[ext_resource type="Shader" path="res://grid_render_base_grid.gdshader" id="5_gg0ld"]
+[ext_resource type="PackedScene" path="res://fps_counter.tscn" id="6_elx6k"]
+[ext_resource type="Texture2D" uid="uid://n7tsgd353v23" path="res://allstitches16x16.png" id="10_cgpbm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyaqr"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vlee5"]
+sky_material = SubResource("ProceduralSkyMaterial_jyaqr")
+
+[sub_resource type="Environment" id="Environment_elx6k"]
+background_mode = 2
+sky = SubResource("Sky_vlee5")
+ambient_light_color = Color(0, 1, 1, 1)
+tonemap_mode = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_errnf"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_to3cc"]
+resource_local_to_scene = true
+render_priority = 1
+shader = ExtResource("2_errnf")
+shader_parameter/stitchType = ExtResource("10_cgpbm")
+shader_parameter/stitchAmount = 8.0
+shader_parameter/stitchSize = 16.0
+shader_parameter/stitchVariationAmount = 1.0
+shader_parameter/imgIn = SubResource("ViewportTexture_errnf")
+shader_parameter/canvasSize = Vector2(240, 135)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jyaqr"]
+resource_local_to_scene = true
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_to3cc")
+shader = ExtResource("5_gg0ld")
+shader_parameter/defaultGrid = ExtResource("2_vlee5")
+shader_parameter/canvasSize = Vector2(240, 135)
+shader_parameter/backgroundColor = Color(0.8047426, 0.80474263, 0.8047426, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bjwnx"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_jyaqr")
+size = Vector2(240, 135)
+
+[node name="SceneTest" type="Node3D" unique_id=1909431210]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1675196260]
+environment = SubResource("Environment_elx6k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1799902793]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, -0.48296297, 0.85385394, -0.19411416, -0.12940952, -0.28884855, -0.94858825, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=632501580]
+disable_3d = true
+transparent_bg = true
+canvas_cull_mask = 4293918721
+size = Vector2i(240, 135)
+size_2d_override = Vector2i(240, 135)
+
+[node name="Chara-test2" parent="SubViewport" unique_id=117107722 instance=ExtResource("1_elx6k")]
+position = Vector2(140, 90)
+
+[node name="Test1" parent="SubViewport" unique_id=2116700183 instance=ExtResource("2_gg0ld")]
+position = Vector2(50, 20)
+
+[node name="Test2" parent="SubViewport" unique_id=1817659495 instance=ExtResource("2_gg0ld")]
+position = Vector2(100, 20)
+
+[node name="Test3" parent="SubViewport" unique_id=32364440 instance=ExtResource("2_gg0ld")]
+position = Vector2(150, 20)
+
+[node name="Test4" parent="SubViewport" unique_id=1526457031 instance=ExtResource("2_gg0ld")]
+position = Vector2(50, 50)
+
+[node name="Test5" parent="SubViewport" unique_id=551214097 instance=ExtResource("2_gg0ld")]
+position = Vector2(100, 50)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1144703559]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 100, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1470563931]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_bjwnx")
+script = ExtResource("3_ywwr0")
+
+[node name="FPSCounter" parent="." unique_id=551642923 instance=ExtResource("6_elx6k")]
