@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5rklm3pdpfrf"]
 
 [ext_resource type="PackedScene" uid="uid://bxxqmdlb7r5cm" path="res://Chara-test2.tscn" id="1_elx6k"]
-[ext_resource type="Shader" path="res://grid_render_stitches.gdshader" id="2_errnf"]
+[ext_resource type="Shader" uid="uid://6emhknkqy71x" path="res://grid_render_stitches.gdshader" id="2_errnf"]
 [ext_resource type="PackedScene" uid="uid://chswvi5j1ydti" path="res://SmallGrayScaleTest2.tscn" id="2_gg0ld"]
 [ext_resource type="Texture2D" uid="uid://cb8kefneus7ek" path="res://grid32x32.png" id="2_vlee5"]
 [ext_resource type="Script" path="res://img_test.gd" id="3_ywwr0"]
@@ -62,6 +62,8 @@ shadow_enabled = true
 [node name="SubViewport" type="SubViewport" parent="." unique_id=632501580]
 disable_3d = true
 transparent_bg = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
 canvas_cull_mask = 4293918721
 size = Vector2i(240, 135)
 size_2d_override = Vector2i(240, 135)
